@@ -9,13 +9,11 @@ import Search  from "./Search/Search";
 import Cart from "../Cart/Cart";
 import { Context } from "../../utils/context";
 
-
-
 import "./Header.scss";
 const Header = () => {
     return <header className="main-header">
         <div className="header-content">
-            <ul>
+            <ul className="left">
                 <li>Home</li>
                 <li>About</li>
                 <li>Categories</li>

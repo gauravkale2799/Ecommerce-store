@@ -1,19 +1,46 @@
 @import "../../css-config/mixins.scss";
-.main-header{
+.main-header {
     width: 100%;
     padding: 0 20px;
     background-color: #212121;
     color: white;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    z-index: ;
+    z-index: 99;
+
     .header-content{
-        .left{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+        .left{ 
+            list-style-type: none;
+            display: flex;
+            gap: 25px;
+            li{font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                cursor: pointer;
+                
+            }
 
         }
         .centre{
+            font-size: 25px;
+            font-weight: 700;
+            cursor: pointer;
 
         }
         .right{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            svg{
+                font-size: 20px;
+                cursor: pointer;
+            }
 
         }
     }
