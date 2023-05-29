@@ -59,7 +59,7 @@ const Footer = () => {
                         GKSTORE 2023 CREATED BY GK DEV. PREMIUM E-COMMERCE
                         SOLUTIONS.
                     </span>
-                    <img src={Payment} />
+                    <img src={Payment} alt= ""/>
                 </div>
             </div>
         </div>
