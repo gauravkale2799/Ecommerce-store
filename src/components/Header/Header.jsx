@@ -10,42 +10,43 @@ import Cart from "../Cart/Cart";
 // back tic can be used to write your own java script code
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
-  const handleScroll = ()=>{
+  const [showCart, setShowCart] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const handleScroll = () => {
     const offset = window.scrollY;
-    if(offset > 200){
+    if (offset > 200) {
       setScrolled(true);
-    } else{
+    } else {
       setScrolled(false);
     }
-      
   };
-  useEffect(()=> {
-    window.addEventListener("scroll", handleScroll)
-      
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
   }, []);
-    
+
   return (
     <>
       <header className={`main-header ${scrolled ? "stickey-header" : ""}`}>
-      <div className="header-content">
-        <ul className="left">
-          <li>Home</li>
-          <li>About</li>
-          <li>Categories</li>
-        </ul>
-        <div className="centre">GKDEVSTORE.</div>
-        <div className="right">
-          <TbSearch />
-          <AiOutlineHeart />
-          <span className="cart-icon">
-            <CgShoppingCart />
-            <span>5</span>
-          </span>
+        <div className="header-content">
+          <ul className="left">
+            <li>Home</li>
+            <li>About</li>
+            <li>Categories</li>
+          </ul>
+          <div className="centre">GKDEVSTORE.</div>
+          <div className="right">
+            <TbSearch  onClick={() => setShowSearch(true)}/>
+            <AiOutlineHeart />
+            <span className="cart-icon" onClick={() => setShowCart(true)}>
+              <CgShoppingCart />
+              <span>5</span>
+            </span>
+          </div>
         </div>
-      </div>
-    </header>
-    <Cart/>
-  </>
+      </header>
+      {showCart && <Cart setShowCart = {setShowCart} />}
+      {showSearch && < Search setShowSearch = {setShowSearch}/>}
+    </>
   );
 };
 
